@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Currency Converter</string>
+    <string name="convert_instructions">Click country flag to convert</string>
+    <string name="us_msg">Enter USD amount</string>
+    <string name="title">Currency Converter</string>
+    <string name="converted_response">Pesos</string>
+</resources>
