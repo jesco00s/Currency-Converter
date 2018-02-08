@@ -3,5 +3,5 @@
     <string name="convert_instructions">Click country flag to convert</string>
     <string name="us_msg">Enter USD amount</string>
     <string name="title">Currency Converter</string>
-    <string name="converted_response">Pesos</string>
+    <string name="converted_response"></string>
 </resources>

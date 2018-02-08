@@ -17,20 +17,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void convertPesos(View view){
         Double usdAmount = getUSDAmount(R.id.USD_Amount);
-        Double pesosAmount = (usdAmount) * 18.76;
-        String pesosString = pesosAmount.toString();
-
-        TextView textView = findViewById(R.id.convertedResponse);
-        textView.setText("Pesos: $" + pesosString);
+        String pesosAmount = getConvertedAmount(usdAmount, 18.76);
+        setAmountToScreen("Pesos", pesosAmount);
     }
 
     public void convertYuan(View view){
         Double usdAmount = getUSDAmount(R.id.USD_Amount);
-        Double yuanAmount = (usdAmount) * 6.32;
-        String yenString = yuanAmount.toString();
-
-        TextView textView = findViewById(R.id.convertedResponse);
-        textView.setText("Yuan: $" + yenString);
+        String yuanAmount = getConvertedAmount(usdAmount, 6.32);
+        setAmountToScreen("Yuan", yuanAmount);
     }
 
     private double getUSDAmount(int id){
@@ -38,5 +32,16 @@ public class MainActivity extends AppCompatActivity {
         String usdString = usdEditText.getText().toString();
         Double usdAmount = Double.parseDouble(usdString);
         return usdAmount;
+    }
+
+    private String getConvertedAmount(Double usd, double multiplier){
+        Double convertedAmount = usd * multiplier;
+        String finalAmount = convertedAmount.toString();
+        return finalAmount;
+    }
+
+    private void setAmountToScreen(String currencyName, String amount){
+        TextView textView = findViewById(R.id.convertedResponse);
+        textView.setText(currencyName + ": $" + amount);
     }
 }
